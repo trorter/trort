@@ -1,8 +1,8 @@
 package ru.ledo.test;
 
 public class Person {
-    String firstName;
-    String lastName;
+    String firstName = "Test";
+    String lastName = "Test";
 
     Person() {};
 
