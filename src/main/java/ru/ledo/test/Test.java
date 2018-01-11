@@ -3,6 +3,7 @@ package ru.ledo.test;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -239,8 +240,42 @@ public class Test {
         DayOfWeek dayOfWeek = independenceDay.getDayOfWeek();
         System.out.println(dayOfWeek);
 
-        LocalDate xmas = LocalDate.parse("24.12.2014", germanFormatter);
-        System.out.println(xmas);
+        //LocalDate xmas = LocalDate.parse("24.12.2014", germanFormatter);
+        //System.out.println(xmas);
+
+        LocalDateTime sylvester = LocalDateTime.of(2014, Month.DECEMBER, 31, 23, 59, 59);
+
+        DayOfWeek dayOfWeek2 = sylvester.getDayOfWeek();
+        System.out.println(dayOfWeek2);
+
+        Month month = sylvester.getMonth();
+        System.out.println(month);
+
+        long minuteOfDay = sylvester.getLong(ChronoField.MICRO_OF_DAY);
+        System.out.println(minuteOfDay);
+
+        Instant instant2 = sylvester
+                .atZone(ZoneId.systemDefault())
+                .toInstant();
+        Date legacyDate2 = Date.from(instant2);
+        System.out.println(legacyDate2);
+
+        DateTimeFormatter formatter =
+                DateTimeFormatter.ofPattern("MMM dd, yyyy - YY:mm");
+
+        //LocalDateTime parsed = LocalDateTime.parse("Nov 03, 2015 - 07:13", formatter);
+        //String ttt = formatter.format(parsed);
+        //System.out.println(ttt);
+
+        //Person testPerson2 =  new PersonFactory().createPerson("AAA", "BBB");
+        Hint hint = Person.class.getAnnotation(Hint.class);
+        System.out.println(hint);
+
+        Hints hints1 = Person.class.getAnnotation(Hints.class);
+        //System.out.println(hints1.value().length);
+
+        Hint[] hints2 = Person.class.getAnnotationsByType(Hint.class);
+        System.out.println(hints2.length);
 
         System.out.println("\nfinish");
     }

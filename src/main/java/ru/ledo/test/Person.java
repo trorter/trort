@@ -1,5 +1,6 @@
 package ru.ledo.test;
 
+@Hints({@Hint("hint1"), @Hint("hint2")})
 public class Person {
     String firstName = "Test";
     String lastName = "Test";
