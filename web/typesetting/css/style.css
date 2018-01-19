@@ -73,6 +73,35 @@ nav {
 	border-radius: 60%;
 }
 */
+footer {
+	width: 100%;
+	height: auto;
+	background: #000;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 24px;
+}
+footer a {
+	color: white;
+	font-size: 11px;
+	margin-left: 10px;
+}
+footer p {
+	color: ;
+	padding-bottom: 10px;
+	font-size: 11px;
+}
+footer nav a:hover {
+	border-bottom: 1px solid white;
+}
+.social img {
+	margin-left: 10px;
+	/*margin-bottom: 10px;*/
+}
+.social img:hover {
+	background: #494949;
+	border-radius:50%;
+}
 
 @media screen and (max-width: 768px) {
 	.topnav a:not(:first-child) {
